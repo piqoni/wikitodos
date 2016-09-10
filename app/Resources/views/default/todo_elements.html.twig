@@ -1,0 +1,8 @@
+{% if todo_elements %}
+
+	{% for todo in todo_elements %}
+		<li class="todo_element" style="font-family: Segoe UI; font-size:30px; border:0px solid grey; padding:10px;"> {{ todo.description }} </li> <p></p>
+		<hr>
+	{% endfor %}
+
+{% endif %}

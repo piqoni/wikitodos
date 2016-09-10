@@ -1,0 +1,21 @@
+input {
+  border: none;
+  outline: none;
+  background-color: #ecf0f1;
+  padding: 10px;
+  color: #14204f;
+  border: 0;
+  margin: 5px 0;
+  display: block;
+  width: 100%;
+}
+button {
+  background-color: #ecf0f1;
+  color: #14204f;
+  border: 0;
+  padding: 10px;
+  margin-left: 6px;
+  margin: 5px 0;
+  cursor: pointer;
+  outline: none;
+}

@@ -14,12 +14,17 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
 
-        $username = $this->getUser()->getUsername();
+        $todos = $this->getDoctrine()
+            ->getRepository('AppBundle:Todo')
+            ->findAll();
 
-        // replace this example code with whatever you need
+        $user = $this->getUser();
+
         return $this->render('default/index.html.twig', [
-            'username' => $username
+            'user' => $user,
+            'todos'=> $todos
             ]
         );
     }
 }
+
