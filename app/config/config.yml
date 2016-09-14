@@ -69,3 +69,32 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: AppBundle\Entity\User
+
+
+easy_admin:
+    site_name: 'wikitodos Admin'
+    design:
+        color_scheme: 'light'
+    entities:
+        Todo:
+            class: AppBundle\Entity\Todo
+            list:
+                fields: ['id', 'name', 'create_date']
+        TodoElements:
+            class: AppBundle\Entity\TodoElements
+            list:
+                fields: ['id', 'todo_id', 'description', 'optional']
+        Users:
+            class: AppBundle\Entity\User
+            list:
+                fields:
+                    - id
+                    - username
+                    - email
+            form:
+                fields:
+                    - username
+                    - email
+                    - plainPassword
+                    - roles
+                    - enabled

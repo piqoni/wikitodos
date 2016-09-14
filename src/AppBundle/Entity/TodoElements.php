@@ -12,8 +12,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 class TodoElements
 {
     /**
-     * @ORM\Id()
-     * @ORM\Column(type="integer")
+     * @var int
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
@@ -30,9 +31,9 @@ class TodoElements
     protected $description;
 
     /**
-     * @ORM\Column(name="optional", type="boolean")
+     * @ORM\Column(name="optional", type="boolean", nullable=true)
      */
-    protected $optional;
+    protected $optional = false;
 
     /**
      * Get id
@@ -111,5 +112,9 @@ class TodoElements
     public function getTodoId()
     {
         return $this->todo_id;
+    }
+
+    public function __toString() {
+        return $this->description;
     }
 }

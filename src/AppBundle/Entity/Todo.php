@@ -84,4 +84,8 @@ class Todo
     {
         return $this->create_date;
     }
+
+    public function __toString() {
+        return $this->name;
+    }
 }

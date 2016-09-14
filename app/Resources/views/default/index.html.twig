@@ -14,7 +14,7 @@
         </span>
         <div id="container">
             <div id="welcome">
-                <h1 style="color:#38528b;">corpora</h1>
+                <h1 style="color:#38528b;">wikitodos</h1>
             </div>
 
             <div id="status">
@@ -43,13 +43,13 @@
 <style>
     body {
         padding-top: 100px;
-        background: url("https://static.pexels.com/photos/26166/pexels-photo-26166.jpg") no-repeat;
+        background: url("images/background.jpg") no-repeat;
         background-size: 100%;
         font-family: 'Open Sans', sans-serif;
     }
     @media only screen and (-webkit-min-device-pixel-ratio: 2) {
         body {
-            background: url("https://static.pexels.com/photos/26166/pexels-photo-26166.jpg") no-repeat;
+            background: url("images/background.jpg") no-repeat;
             background-size: 100%;
         }
     }
@@ -112,11 +112,6 @@ horsey(document.querySelector('input'), {
 
 
 $('#searchform').on('submit', function(event) {
-  // if ($('#search').val()=='Go to the beach') {
-  //       // $("body").css("background", "url('https://static.pexels.com/photos/26183/pexels-photo-26183.jpg')").css("background-size", "100%");
-  //       $(document.body).css({"background-image": "url('https://static.pexels.com/photos/26183/pexels-photo-26183.jpg')"}).css({"background-size": "100%"});
-  //       // waitAWhile();
-  // }
   var search_value = $('#search').attr('value');
   var $form = $(this);
   $.ajax({
