@@ -1,6 +1,6 @@
 wikitodos
 =========
-When you're not sure what TODO...
+TODO lists should be reusable.
 ![Homepage Screenshot](http://i.imgur.com/RYUpGwx.jpg)
 
 The idea of wikitodos is very simple: ready-made TODOs & checklists. Do you want to cook Spaghetti, or go to the beach? 
@@ -18,4 +18,5 @@ This is my first Symfony Project. Actually, the whole point of this project is t
 * :white_check_mark: User Authentication
 * :white_check_mark: Admin Panel
 * :x: Save TODOs to DB when user interacts with a TODO, to remember state of TODO elements
+* :x: Users should be able to add their own TODO elements
 * :x: Mobile version (duh)
