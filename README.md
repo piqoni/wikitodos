@@ -20,3 +20,20 @@ This is my first Symfony Project. Actually, the whole point of this project is t
 * :x: Save TODOs to DB when user interacts with a TODO, to remember state of TODO elements
 * :x: Users should be able to add their own TODO elements
 * :x: Mobile version (duh)
+
+## Installation 
+
+Clone the repository and from project root install required packages.
+
+```
+composer install
+```
+
+Create database schema, load fixtures (sample data, admin user), install assets. 
+```
+php app/console doctrine:schema:create
+php app/console doctrine:fixtures:load
+php app/console assets:install
+```
+
+You may login to Administration backend at /admin using **admin/admin** credentials.
