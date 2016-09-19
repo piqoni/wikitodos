@@ -129,7 +129,14 @@ event.preventDefault();
 });
 
 $("body").on("click", "li", function(){
-    $(this).css("text-decoration", "line-through");
+  var val = $(this).attr("data-clicked");
+    if (val == 'true') {
+      $(this).css("text-decoration", "none");
+      $(this).attr('data-clicked','false');
+    } else {
+      $(this).css("text-decoration", "line-through");
+      $(this).attr('data-clicked','true');
+    }
 });
 
 </script>
