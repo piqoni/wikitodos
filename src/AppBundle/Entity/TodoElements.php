@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use JsonSerializable;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -9,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity
  * @ORM\Table(name="todo_elements")
  */
-class TodoElements
+class TodoElements implements JsonSerializable
 {
     /**
      * @var int
@@ -114,7 +115,19 @@ class TodoElements
         return $this->todo_id;
     }
 
+
     public function __toString() {
         return $this->description;
     }
+
+
+    public function jsonSerialize()
+    {
+        return array(
+            'todo_id' => $this->todo_id->getId(),
+            'description' => $this->description,
+            'optional'=> $this->optional,
+        );
+    }
+
 }
