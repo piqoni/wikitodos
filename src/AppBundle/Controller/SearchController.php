@@ -17,15 +17,34 @@ class SearchController extends Controller
      */
     public function searchAction(Request $request)
     {
+        $search = $request->request->get('search');
+
+        $todo_elements = $this->getDoctrine()
+            ->getRepository('AppBundle:TodoElements')
+            ->findBy(['todo_id' => $search]);
+
+        return $this->render('default/todo_elements.html.twig',[
+            'todo_elements' => $todo_elements
+            ]);
+        
+    }    
+
+
+    /**
+     * @Route("/jsonsearch", name="jsonsearch")
+     * @Method("POST")
+     */
+    public function jsonSearchAction(Request $request)
+    {
     	$search = $request->request->get('search');
 
         $todo_elements = $this->getDoctrine()
             ->getRepository('AppBundle:TodoElements')
             ->findBy(['todo_id' => $search]);
 
-    	return $this->render('default/todo_elements.html.twig',[
-    		'todo_elements' => $todo_elements
-    		]);
-        
+        $response = new Response(json_encode($todo_elements));
+        $response->headers->set('Content-Type', 'application/json');
+
+        return $response;
     }
 }
