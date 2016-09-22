@@ -1,5 +1,4 @@
 <?php
-// src/AppBundle/Controller/AdminController.php
 namespace AppBundle\Controller;
 
 use JavierEguiluz\Bundle\EasyAdminBundle\Controller\AdminController as BaseAdminController;
