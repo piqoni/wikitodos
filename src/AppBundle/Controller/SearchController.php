@@ -16,14 +16,15 @@ class SearchController extends Controller
      */
     public function searchAction(Request $request)
     {
-        $search = $request->request->get('search');
+        $todo_id = $request->request->get('search');
 
         $todo_elements = $this->getDoctrine()
             ->getRepository('AppBundle:TodoElements')
-            ->findBy(['todo_id' => $search]);
+            ->findBy(['todo_id' => $todo_id]);
 
         return $this->render('default/todo_elements.html.twig',[
-            'todo_elements' => $todo_elements
+            'todo_elements' => $todo_elements,
+            'todo_id' => $todo_id
             ]);
         
     }    
