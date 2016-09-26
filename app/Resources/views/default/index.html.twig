@@ -88,10 +88,6 @@
 
 <script   src="{{ asset('bower_components/jquery/dist/jquery.min.js')}}"   crossorigin="anonymous"></script>
 
-<script type="text/javascript">
-
-
-</script>
 
 <script type="text/javascript">
     
@@ -137,6 +133,20 @@ $("body").on("click", "li", function(){
       $(this).css("text-decoration", "line-through");
       $(this).attr('data-clicked','true');
     }
+});
+
+$("body").on("click","#add_list",function(e) {
+  var todo_id = $(this).attr('data-todo_id');
+
+  $.ajax({
+      url: '/add',
+      type: 'post',
+      data: {'todo_id': todo_id},
+      success: function( data, status ){
+          alert(data);
+      }
+  });
+
 });
 
 </script>
