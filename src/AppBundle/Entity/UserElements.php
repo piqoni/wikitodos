@@ -162,4 +162,27 @@ class UserElements implements JsonSerializable
     {
         return $this->user_id;
     }
+
+    /**
+     * Set done
+     *
+     * @param boolean $done
+     * @return UserElements
+     */
+    public function setDone($done)
+    {
+        $this->done = $done;
+
+        return $this;
+    }
+
+    /**
+     * Get done
+     *
+     * @return boolean 
+     */
+    public function getDone()
+    {
+        return $this->done;
+    }
 }
