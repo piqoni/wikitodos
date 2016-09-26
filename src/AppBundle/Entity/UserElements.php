@@ -60,7 +60,7 @@ class UserElements implements JsonSerializable
      * Set description
      *
      * @param string $description
-     * @return TodoElements
+     * @return UserElements
      */
     public function setDescription($description)
     {
@@ -83,7 +83,7 @@ class UserElements implements JsonSerializable
      * Set optional
      *
      * @param boolean $optional
-     * @return TodoElements
+     * @return UserElements
      */
     public function setOptional($optional)
     {
@@ -106,7 +106,7 @@ class UserElements implements JsonSerializable
      * Set todo_id
      *
      * @param \AppBundle\Entity\Todo $todoId
-     * @return TodoElements
+     * @return UserElements
      */
     public function setTodoId(\AppBundle\Entity\Todo $todoId = null)
     {
