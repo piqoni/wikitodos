@@ -84,6 +84,10 @@ easy_admin:
             class: AppBundle\Entity\TodoElements
             list:
                 fields: ['id', 'todo_id', 'description', 'optional']
+        UserElements:
+            class: AppBundle\Entity\UserElements
+            list:
+                fields: ['id', 'user_id', 'todo_id', 'description', 'optional']
         Users:
             class: AppBundle\Entity\User
             list:
