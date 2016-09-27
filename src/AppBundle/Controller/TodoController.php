@@ -33,7 +33,8 @@ class TodoController extends Controller
         // check if list already exist
         $todo_exists =  $this->getDoctrine()
             ->getRepository('AppBundle:UserElements')
-            ->findBy(['todo_id' => $todo_id]);
+            ->findBy(['todo_id' => $todo_id,
+                      'user_id' => $user_id]);
         
         if ($todo_exists) {
             return new Response('You have already added this to your lists.');
