@@ -27,8 +27,11 @@ class MyListsController extends Controller
 
         $query = $em->createQuery('SELECT t.id, t.name 
                                    FROM AppBundle\Entity\UserElements u 
-                                   JOIN  AppBundle\Entity\Todo t WITH t.id=u.todo_id 
+                                   JOIN  AppBundle\Entity\Todo t WITH t.id=u.todo_id
+                                   WHERE u.user_id = :user_id
                                    GROUP BY t.id');
+        
+        $query->setParameter('user_id', $user_id);
 
         $myLists = $query->getResult(); 
 
